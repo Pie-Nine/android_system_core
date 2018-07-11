@@ -304,13 +304,12 @@ bool BatteryMonitor::update(void) {
                 KLOG_WARNING(LOG_TAG, "%s: Unknown power supply type\n",
                              mChargerNames[i].string());
             }
-
             int ChargingCurrent =
-                  (access(SYSFS_BATTERY_CURRENT, R_OK) == 0) ? abs(getIntField(String8(SYSFS_BATTERY_CURRENT))) : 0;
+                (access(SYSFS_BATTERY_CURRENT, R_OK) == 0) ? abs(getIntField(String8(SYSFS_BATTERY_CURRENT))) : 0;
 
             int ChargingVoltage =
-                  (access(SYSFS_BATTERY_VOLTAGE, R_OK) == 0) ? getIntField(String8(SYSFS_BATTERY_VOLTAGE)) :
-                   DEFAULT_VBUS_VOLTAGE;
+                (access(SYSFS_BATTERY_VOLTAGE, R_OK) == 0) ? getIntField(String8(SYSFS_BATTERY_VOLTAGE)) :
+                DEFAULT_VBUS_VOLTAGE;
 
             double power = ((double)ChargingCurrent / MILLION) *
                            ((double)ChargingVoltage / MILLION);
