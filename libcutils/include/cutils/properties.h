@@ -34,7 +34,7 @@ extern "C" {
 **          these, but with different names.  (TODO: fix that)
 */
 #define PROPERTY_KEY_MAX   PROP_NAME_MAX
-#define PROPERTY_VALUE_MAX  PROP_VALUE_MAX
+#define PROPERTY_VALUE_MAX  92
 
 /* property_get: returns the length of the value which will never be
 ** greater than PROPERTY_VALUE_MAX - 1 and will always be zero terminated.
